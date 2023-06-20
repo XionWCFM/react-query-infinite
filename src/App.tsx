@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Loading from './components/Loading';
 import React from 'react';
 import InfiniteComponent from './components/InfiniteComponent';
+import Pokemon from './components/Pokemon';
 
 function App() {
   const queryClient = new QueryClient({
@@ -19,7 +20,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <main>
         <React.Suspense fallback={<Loading />}>
-          <InfiniteComponent />
+          <Pokemon />
         </React.Suspense>
       </main>
       <ReactQueryDevtools initialIsOpen={true} />
