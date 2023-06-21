@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Loading from './components/Loading';
 import React from 'react';
 import PagenationComponent from './components/pagenation/PagenationComponent';
+import AdvancedPagenation from './components/pagenation/AdvancedPagenation';
 
 function App() {
   const queryClient = new QueryClient({
@@ -19,7 +20,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <main>
         <React.Suspense fallback={<Loading />}>
-          <PagenationComponent />
+          <AdvancedPagenation />
         </React.Suspense>
       </main>
       <ReactQueryDevtools initialIsOpen={true} />
