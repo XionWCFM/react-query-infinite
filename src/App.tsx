@@ -4,8 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Loading from './components/Loading';
 import React from 'react';
-import InfiniteComponent from './components/InfiniteComponent';
-import Pokemon from './components/Pokemon';
+import PagenationComponent from './components/pagenation/PagenationComponent';
 
 function App() {
   const queryClient = new QueryClient({
@@ -20,7 +19,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <main>
         <React.Suspense fallback={<Loading />}>
-          <Pokemon />
+          <PagenationComponent />
         </React.Suspense>
       </main>
       <ReactQueryDevtools initialIsOpen={true} />

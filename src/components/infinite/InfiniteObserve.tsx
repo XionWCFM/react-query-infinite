@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import React from 'react';
-import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
 interface PokemonProps {}
 
@@ -11,7 +11,7 @@ const getPoke = async (offset: number = 0) => {
   return await response.json();
 };
 
-const Pokemon = ({}: PokemonProps) => {
+const InfiniteObserve = ({}: PokemonProps) => {
   const { data, hasNextPage, fetchNextPage } = useInfiniteQuery(
     ['pokemon'],
     ({ pageParam = '' }) => getPoke(pageParam),
@@ -28,7 +28,7 @@ const Pokemon = ({}: PokemonProps) => {
     },
   );
 
-  const loadMoreButtonRef = React.useRef(null);
+  const loadMoreButtonRef = React.useRef<HTMLDivElement | null>(null);
 
   useIntersectionObserver({
     root: null,
@@ -50,4 +50,4 @@ const Pokemon = ({}: PokemonProps) => {
   );
 };
 
-export default Pokemon;
+export default InfiniteObserve;

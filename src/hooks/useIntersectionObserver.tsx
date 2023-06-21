@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 
 interface UseIntersectionObserver {
-  root: any;
-  target: any;
-  onIntersect: any;
+  root: MutableRefObject<Element | null> | null;
+  target: MutableRefObject<Element | null>;
+  onIntersect: Function;
   threshold?: number;
   rootMargin?: string;
   enabled?: any;
